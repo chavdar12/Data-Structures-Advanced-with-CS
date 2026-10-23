@@ -3,7 +3,20 @@
 public class TreeNode<T> where T : IComparable<T>
 {
     public T LeftKey;
-    public T RightKey;
+
+    // Tracked separately: for value types an empty RightKey (default) is indistinguishable from a real key
+    private T rightKey;
+    private bool hasRightKey;
+
+    public T RightKey
+    {
+        get => rightKey;
+        set
+        {
+            rightKey = value;
+            hasRightKey = true;
+        }
+    }
 
     public TreeNode<T> LeftChild;
     public TreeNode<T> MiddleChild;
@@ -14,14 +27,20 @@ public class TreeNode<T> where T : IComparable<T>
         LeftKey = key;
     }
 
+    public void ClearRightKey()
+    {
+        rightKey = default;
+        hasRightKey = false;
+    }
+
     public bool IsThreeNode()
     {
-        return RightKey != null;
+        return hasRightKey;
     }
 
     public bool IsTwoNode()
     {
-        return RightKey == null;
+        return !hasRightKey;
     }
 
     public bool IsLeaf()

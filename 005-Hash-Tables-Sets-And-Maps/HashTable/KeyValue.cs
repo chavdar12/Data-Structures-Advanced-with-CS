@@ -13,20 +13,14 @@ public class KeyValue<TKey, TValue>
 
     public override bool Equals(object other)
     {
-        var element = (KeyValue<TKey, TValue>)other;
-        var equals = Equals(Key, element.Key) && Equals(Value, element.Value);
-
-        return equals;
+        return other is KeyValue<TKey, TValue> element
+               && Equals(Key, element.Key)
+               && Equals(Value, element.Value);
     }
 
     public override int GetHashCode()
     {
-        return CombineHashCodes(Key.GetHashCode(), Value.GetHashCode());
-    }
-
-    private int CombineHashCodes(int h1, int h2)
-    {
-        return ((h1 << 5) + h1) ^ h2;
+        return HashCode.Combine(Key, Value);
     }
 
     public override string ToString()

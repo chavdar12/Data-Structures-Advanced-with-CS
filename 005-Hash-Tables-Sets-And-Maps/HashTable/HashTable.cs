@@ -196,7 +196,8 @@ public class HashTable<TKey, TValue> : IEnumerable<KeyValue<TKey, TValue>>
 
     private int FindSlotNumber(TKey key)
     {
-        var slotNumber = Math.Abs(key.GetHashCode()) % slots.Length;
+        // Mask the sign bit: Math.Abs(int.MinValue) throws
+        var slotNumber = (key.GetHashCode() & int.MaxValue) % slots.Length;
 
         return slotNumber;
     }

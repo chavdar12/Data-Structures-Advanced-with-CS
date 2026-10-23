@@ -2,8 +2,6 @@
 
 public class AVL<T> where T : IComparable<T>
 {
-    private Node<T> root;
-
     public Node<T> Root { get; private set; }
 
     public bool Contains(T item)

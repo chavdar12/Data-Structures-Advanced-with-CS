@@ -139,4 +139,16 @@ public class RedBlackThreeTests
         var floor = RedBlackTree.Floor("B");
         Assert.That(floor, Is.EqualTo("A"));
     }
+
+    [Test]
+    public void TestCeiling_MissingElement()
+    {
+        Assert.That(RedBlackTree.Ceiling("B"), Is.EqualTo("C"));
+    }
+
+    [Test]
+    public void TestFloor_MissingElement()
+    {
+        Assert.That(RedBlackTree.Floor("D"), Is.EqualTo("C"));
+    }
 }

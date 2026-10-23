@@ -1,0 +1,38 @@
+<Solution>
+  <Folder Name="/001-B-Trees-2-3-Trees-And-Avl-Trees/">
+    <Project Path="001-B-Trees-2-3-Trees-And-Avl-Trees/AVLTree/AVLTree.csproj" />
+    <Project Path="001-B-Trees-2-3-Trees-And-Avl-Trees/Tests/Tests.csproj" />
+  </Folder>
+  <Folder Name="/002-Exercise-B-Trees-2-3-Trees-And-Avl-Trees/">
+    <Project Path="002-Exercise-B-Trees-2-3-Trees-And-Avl-Trees/AVL/AVL.csproj" />
+    <Project Path="002-Exercise-B-Trees-2-3-Trees-And-Avl-Trees/AVLTests/AVLTests.csproj" />
+    <Project Path="002-Exercise-B-Trees-2-3-Trees-And-Avl-Trees/Hierarchy/Hierarchy.csproj" />
+    <Project Path="002-Exercise-B-Trees-2-3-Trees-And-Avl-Trees/HierarchyTests/HierarchyTests.csproj" />
+    <Project Path="002-Exercise-B-Trees-2-3-Trees-And-Avl-Trees/Two-Three/Two-Three.csproj" />
+    <Project Path="002-Exercise-B-Trees-2-3-Trees-And-Avl-Trees/Two-ThreeTests/Two-ThreeTests.csproj" />
+  </Folder>
+  <Folder Name="/003-Red-Black-Trees-And-Aa-Trees/">
+    <Project Path="003-Red-Black-Trees-And-Aa-Trees/RedBlackTree/RedBlackTree.csproj" />
+    <Project Path="003-Red-Black-Trees-And-Aa-Trees/RedBlackTreeTests/RedBlackTreeTests.csproj" />
+  </Folder>
+  <Folder Name="/004-Exercise-Red-Black-Trees-And-Aa-Trees/">
+    <Project Path="004-Exercise-Red-Black-Trees-And-Aa-Trees/AATree/AATree.csproj" />
+    <Project Path="004-Exercise-Red-Black-Trees-And-Aa-Trees/AATreeTests/AATreeTests.csproj" />
+    <Project Path="004-Exercise-Red-Black-Trees-And-Aa-Trees/RedBlackTree/RedBlackTree.csproj" />
+    <Project Path="004-Exercise-Red-Black-Trees-And-Aa-Trees/RedBlackTreeTests/RedBlackTreeTests.csproj" />
+  </Folder>
+  <Folder Name="/005-Hash-Tables-Sets-And-Maps/">
+    <Project Path="005-Hash-Tables-Sets-And-Maps/HashTable/HashTable.csproj" />
+    <Project Path="005-Hash-Tables-Sets-And-Maps/HashTableTests/HashTableTests.csproj" />
+  </Folder>
+  <Folder Name="/006-Exercise-Hash-Tables-Sets-And-Maps/">
+    <Project Path="006-Exercise-Hash-Tables-Sets-And-Maps/RoyaleArena/RoyaleArena.csproj" />
+    <Project Path="006-Exercise-Hash-Tables-Sets-And-Maps/RoyaleArenaTests/RoyaleArenaTests.csproj" />
+    <Project Path="006-Exercise-Hash-Tables-Sets-And-Maps/WordCruncher/WordCruncher.csproj" />
+    <Project Path="006-Exercise-Hash-Tables-Sets-And-Maps/WordCruncherTests/WordCruncherTests.csproj" />
+  </Folder>
+  <Folder Name="/007-Data-Structures-Augmentation/">
+    <Project Path="007-Data-Structures-Augmentation/CollectionOfPersons/CollectionOfPersons.csproj" />
+    <Project Path="007-Data-Structures-Augmentation/CollectionOfPersonsTests/CollectionOfPersonsTests.csproj" />
+  </Folder>
+</Solution>

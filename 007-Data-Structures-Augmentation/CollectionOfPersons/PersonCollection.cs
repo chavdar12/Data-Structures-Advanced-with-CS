@@ -1,4 +1,5 @@
 ﻿using Wintellect.PowerCollections;
+using OrderedDictionary = Wintellect.PowerCollections.OrderedDictionary<int, System.Collections.Generic.SortedSet<Collection_of_Persons.Person>>;
 
 namespace Collection_of_Persons;
 
@@ -7,9 +8,9 @@ public class PersonCollection : IPersonCollection
     private Dictionary<string, Person> peopleByEmail = new();
     private Dictionary<string, SortedSet<Person>> peopleByEmailDomain = new();
     private Dictionary<string, SortedSet<Person>> peopleByNameAndTown = new();
-    private OrderedDictionary<int, SortedSet<Person>> peopleByAge = new();
+    private OrderedDictionary peopleByAge = new();
 
-    private Dictionary<string, OrderedDictionary<int, SortedSet<Person>>> peopleByTownAndAge = new();
+    private Dictionary<string, OrderedDictionary> peopleByTownAndAge = new();
 
     public bool AddPerson(string email, string name, int age, string town)
     {

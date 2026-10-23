@@ -9,6 +9,9 @@ public class WordCruncher
     {
         permutation = GeneratePermutations(input.OrderBy(s => s).ToList(), target);
 
+        // No word fits: VisitPath(null) would otherwise yield one empty path
+        if (permutation == null) return;
+
         foreach (var path in GetAllPaths())
         {
             var result = string.Join(' ', path);

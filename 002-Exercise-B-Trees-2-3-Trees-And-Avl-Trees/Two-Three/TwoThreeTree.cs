@@ -25,7 +25,7 @@ public class TwoThreeTree<T> where T : IComparable<T>
 
         if (node.LeftKey != null) sb.Append(node.LeftKey).Append(" ");
 
-        if (node.RightKey != null)
+        if (node.IsThreeNode())
             sb.Append(node.RightKey).Append(Environment.NewLine);
         else
             sb.Append(Environment.NewLine);
@@ -81,7 +81,7 @@ public class TwoThreeTree<T> where T : IComparable<T>
 
     private TreeNode<T> Merge(TreeNode<T> a, TreeNode<T> b)
     {
-        if (a.RightKey == null)
+        if (a.IsTwoNode())
         {
             if (a.LeftKey.CompareTo(b.LeftKey) < 0)
             {
@@ -94,6 +94,7 @@ public class TwoThreeTree<T> where T : IComparable<T>
                 a.RightKey = a.LeftKey;
                 a.RightChild = a.MiddleChild;
                 a.LeftKey = b.LeftKey;
+                a.LeftChild = b.LeftChild;
                 a.MiddleChild = b.MiddleChild;
             }
 
@@ -107,12 +108,11 @@ public class TwoThreeTree<T> where T : IComparable<T>
                 LeftChild = b,
                 MiddleChild = a
             };
-            b.LeftChild = a.LeftChild;
             a.LeftChild = a.MiddleChild;
             a.MiddleChild = a.RightChild;
             a.RightChild = null;
             a.LeftKey = a.RightKey;
-            a.RightKey = default;
+            a.ClearRightKey();
 
             return mergedNode;
         }
@@ -124,8 +124,9 @@ public class TwoThreeTree<T> where T : IComparable<T>
                 LeftChild = b.MiddleChild,
                 MiddleChild = a.RightChild
             };
+            a.MiddleChild = b.LeftChild;
             b.LeftChild = a;
-            a.RightKey = default;
+            a.ClearRightKey();
             a.RightChild = null;
 
             return b;
@@ -137,9 +138,8 @@ public class TwoThreeTree<T> where T : IComparable<T>
                 LeftChild = a,
                 MiddleChild = b
             };
-            b.LeftChild = a.RightChild;
             a.RightChild = null;
-            a.RightKey = default;
+            a.ClearRightKey();
 
             return mergedNode;
         }

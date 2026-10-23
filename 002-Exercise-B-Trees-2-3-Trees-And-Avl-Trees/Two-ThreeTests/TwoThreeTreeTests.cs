@@ -50,4 +50,28 @@ public class TwoThreeTreeTests
                                                 "J " + Environment.NewLine +
                                                 "K " + Environment.NewLine));
     }
+
+    [Test]
+    public void TestInsertValueTypes_KeepsAllKeys()
+    {
+        var tree = new TwoThreeTree<int>();
+        var keys = Enumerable.Range(0, 200).Select(i => i * 37 % 200).ToArray();
+        foreach (var key in keys) tree.Insert(key);
+
+        var printed = tree.ToString()
+            .Split((char[])[' ', '\r', '\n'], StringSplitOptions.RemoveEmptyEntries)
+            .Select(int.Parse)
+            .OrderBy(k => k);
+
+        CollectionAssert.AreEqual(keys.OrderBy(k => k), printed);
+    }
+
+    [Test]
+    public void TestInsertSingleValueType()
+    {
+        var tree = new TwoThreeTree<int>();
+        tree.Insert(0);
+
+        Assert.That(tree.ToString(), Is.EqualTo("0 " + Environment.NewLine));
+    }
 }

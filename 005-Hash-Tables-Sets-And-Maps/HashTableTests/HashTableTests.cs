@@ -437,4 +437,25 @@ public class HashTableTests
         double[] expectedValues = { 99.9, 123.45 };
         CollectionAssert.AreEquivalent(expectedValues, values.ToArray());
     }
+
+    [Test]
+    public void Add_KeyWithMinValueHashCode_ShouldWork()
+    {
+        var hashTable = new HashTable<int, string>();
+
+        hashTable.Add(int.MinValue, "min");
+
+        Assert.That(hashTable[int.MinValue], Is.EqualTo("min"));
+    }
+
+    [Test]
+    public void KeyValue_EqualsNullOrOtherType_ShouldReturnFalse()
+    {
+        var keyValue = new KeyValue<string, string>("key", null);
+
+        Assert.That(keyValue.Equals(null), Is.False);
+        Assert.That(keyValue.Equals("key"), Is.False);
+        Assert.That(keyValue.Equals(new KeyValue<string, string>("key", null)), Is.True);
+        Assert.DoesNotThrow(() => keyValue.GetHashCode());
+    }
 }
