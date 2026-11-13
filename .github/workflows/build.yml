@@ -15,4 +15,5 @@ jobs:
           dotnet-version: 10.0.x
       - run: dotnet restore Data-Structures-Advanced.slnx
       - run: dotnet build Data-Structures-Advanced.slnx --no-restore -c Release
-      - run: dotnet test Data-Structures-Advanced.slnx --no-build -c Release
+      # Performance tests assert wall-clock limits (e.g. < 400 ms) that shared runners miss at random; run them locally
+      - run: dotnet test Data-Structures-Advanced.slnx --no-build -c Release --filter "FullyQualifiedName!~Performance"
